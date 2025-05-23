@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope For Paws - Pəncəli dostlarımıza ümid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            500: '#f97316',
+                            600: '#ea580c'
+                        },
+                        amber: {
+                            50: '#fffbeb'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-orange-100">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    <span class="text-xl font-bold text-gray-800">Hope For Paws</span>
+                </div>
+                <div class="hidden md:flex space-x-6" id="nav-links"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content"></main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <svg class="h-6 w-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    <span class="text-lg font-semibold">Hope For Paws</span>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">© 2025 Hope For Paws. Bütün hüquqlar qorunur.</p>
+                    <p class="text-gray-400 text-sm mt-1">Hər bir pəncə sevgi və qayğıya layiqdir 🐾</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Website content data
+        const websiteData = {
+            navigation: [
+                { text: "Ana Səhifə", href: "#home" },
+                { text: "Layihə Haqqında", href: "#about" },
+                { text: "Məqsədlərimiz", href: "#goals" },
+                { text: "Əlaqə", href: "#contact" }
+            ],
+            hero: {
+                badge: "Ümid və Sevgi",
+                title: "Hope For Paws",
+                subtitle: "Pəncələr üçün Ümid",
+                description: "Hər bir evsiz heyvanın sevgi dolu bir evə sahib olma hüququnu müdafiə edirik. Birlikdə onlara yeni həyat və ümid bəxş edə bilərik.",
+                image: "https://envs.sh/sjO.jpg",
+                imageAlt: "Xilas edilmiş it və pişik",
+                stats: "200+ Xilas Edilmiş Heyvan",
+                buttons: [
+                    { text: "Bizə Dəstək Olun", type: "primary" },
+                    { text: "Bizə Qoşulun", type: "secondary" }
+                ]
+            },
+            about: {
+                title: "Hope For Paws Missiyası",
+                description: "Evsiz heyvanların həyatını dəyişdirmək və onlara sevgi dolu ailələr tapmaq üçün yaradılmış layihəmiz",
+                problems: {
+                    title: "Həll Etdiyimiz Problem",
+                    items: [
+                        "Küçələrdə yaşayan minlərlə evsiz it və pişik aclıq, xəstəlik və təhlükə ilə üzləşir",
+                        "Heyvan sığınacaqlarında yer çatışmazlığı və resurs məhdudiyyəti mövcuddur",
+                        "İctimaiyyətdə heyvan hüquqları və məsul sahiblik barədə məlumatsızlıq var"
+                    ]
+                },
+                solutions: {
+                    title: "Bizim Həllimiz",
+                    items: [
+                        "Evsiz heyvanları xilas edib, tibbi yardım göstərib, sevgi dolu ailələrə yerləşdiririk",
+                        "Sterilizasiya və vaksinasiya proqramları ilə heyvan populyasiyasını idarə edirik",
+                        "İctimaiyyəti heyvan hüquqları və məsul sahiblik barədə maarifləndiririk"
+                    ]
+                }
+            },
+            goals: {
+                title: "Gələcək Planlarımız",
+                description: "\"Dayanıqlı Səhra\" layihəsi çərçivəsində hər bir evsiz heyvanın xoşbəxt həyat yaşaması üçün konkret addımlar atırıq",
+                phases: [
+                    {
+                        number: 1,
+                        title: "Mərhələ 1: Başlanğıc",
+                        description: "Layihənin ilk mərhələsində əsas infrastrukturun yaradılması və hüquqi əsasların təmin edilməsi",
+                        duration: "1-2 ay",
+                        items: [
+                            "Ərazi alınması və hüquqi sənədləşmə",
+                            "Təhlükəsizlik tədbirlərinin təşkili",
+                            "İlkin könüllü komandanın formalaşdırılması"
+                        ]
+                    },
+                    {
+                        number: 2,
+                        title: "Mərhələ 2: İnfrastruktur",
+                        description: "Sığınacaq kompleksinin və əsas xidmətlərin qurulması",
+                        duration: "3-6 ay",
+                        items: [
+                            "Sığınacaq modulları və baytar blokunun qurulması",
+                            "Su, qida və enerji sistemlərinin təşkili",
+                            "İnformasiya mərkəzi və könüllü sahəsinin yaradılması"
+                        ]
+                    },
+                    {
+                        number: 3,
+                        title: "Mərhələ 3: Tibbi Xidmətlər",
+                        description: "Klinik və sahibləndirmə sistemlərinin yaradılması",
+                        duration: "6-10 ay",
+                        items: [
+                            "Baytarlıq klinikası və təcili yardım blokunun işə salınması",
+                            "Sterilizasiya və vaksinasiya proqramlarının başladılması",
+                            "Sahibləndirmə sisteminin qurulması"
+                        ]
+                    },
+                    {
+                        number: 4,
+                        title: "Mərhələ 4: İctimai Fəaliyyət",
+                        description: "İctimai kampaniyalar və könüllü sisteminin genişləndirilməsi",
+                        duration: "10-18 ay",
+                        items: [
+                            "Məktəblərlə inteqrasiya və maarifləndirmə proqramları",
+                            "Könüllü və donor sisteminin gücləndirilməsi",
+                            "Bələdiyyə və dövlət orqanları ilə hüquqi əməkdaşlıq"
+                        ]
+                    }
+                ],
+                objectives: [
+                    {
+                        title: "Xilas və Müalicə",
+                        description: "Küçələrdə yaşayan heyvanları xilas edib, tam tibbi yardım göstərmək"
+                    },
+                    {
+                        title: "Sığınacaq və Qayğı",
+                        description: "Təmiz, təhlükəsiz və ekoloji uyğun sığınacaq kompleksi yaratmaq"
+                    },
+                    {
+                        title: "Maarifləndirmə",
+                        description: "İctimaiyyəti heyvan hüquqları və məsul sahiblik barədə maarifləndirmək"
+                    }
+                ],
+                internationalModels: [
+                    {
+                        name: "Tierheim Berlin",
+                        description: "Almaniyada 16 hektar ərazidə 1300-dən çox heyvana eyni vaxtda xidmət göstərir. Şəffaflıq və ictimai nəzarət sistemi ilə tanınır."
+                    },
+                    {
+                        name: "HAÇİKO",
+                        description: "Türkiyədə könüllülük əsaslı idarəetmə modeli və kütləvi maarifləndirmə kampaniyaları ilə uğur qazanmışdır."
+                    },
+                    {
+                        name: "DOA Amsterdam",
+                        description: "Hollandiyada dövlət-özəl sektor tərəfdaşlığı ilə uzunmüddətli sabitlik təmin edir. İnteqrasiya olunmuş sahibləndirmə sistemi mövcuddur."
+                    }
+                ]
+            },
+            contact: {
+                title: "Bizimlə Əlaqə Saxlayın",
+                description: "Suallarınız var? Könüllü olmaq istəyirsiniz? Bizə yazın!",
+                info: [
+                    {
+                        type: "email",
+                        label: "Email",
+                        value: "contact@hopeforpa.ws",
+                        href: "mailto:contact@hopeforpa.ws"
+                    },
+                    {
+                        type: "phone",
+                        label: "Telefon",
+                        value: "+994 50 989 46 22",
+                        href: "tel:+994509894622"
+                    },
+                    {
+                        type: "instagram",
+                        label: "Instagram",
+                        value: "@hope_for_paws_az",
+                        href: "https://instagram.com/hope_for_paws_az"
+                    }
+                ],
+                emergency: {
+                    title: "Təcili Yardım",
+                    description: "Yaralı və ya təhlükədə olan heyvan tapdınızsa, dərhal bizə zəng edin."
+                }
+            }
+        };
+
+        // Icon components as SVG strings
+        const icons = {
+            paw: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>',
+            heart: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>',
+            target: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+            users: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path></svg>',
+            shield: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>',
+            mail: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>',
+            phone: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>',
+            instagram: '<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-5a1.5 1.5 0 113 0m-3 5a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path></svg>'
+        };
+
+        // Function to render navigation
+        function renderNavigation() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.innerHTML = websiteData.navigation.map(link => 
+                `<a href="${link.href}" class="text-gray-700 hover:text-orange-500 transition-colors">${link.text}</a>`
+            ).join('');
+        }
+
+        // Function to render hero section
+        function renderHero() {
+            const hero = websiteData.hero;
+            return `
+                <section id="home" class="pt-20 pb-16 px-4">
+                    <div class="container mx-auto">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-2 text-orange-500">
+                                    ${icons.paw}
+                                    <span class="text-sm font-medium uppercase tracking-wide">${hero.badge}</span>
+                                </div>
+                                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 leading-tight">
+                                    ${hero.title}
+                                    <span class="block text-orange-500">${hero.subtitle}</span>
+                                </h1>
+                                <p class="text-xl text-gray-600 leading-relaxed">${hero.description}</p>
+    
+                            </div>
+                            <div class="relative">
+                                <img src="${hero.image}" alt="${hero.imageAlt}" class="w-full h-auto rounded-2xl shadow-2xl">
+                                <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg">
+                                    <div class="flex items-center space-x-2">
+                                        ${icons.paw.replace('h-6 w-6', 'h-6 w-6 text-orange-500')}
+                                        <span class="font-semibold text-gray-800">${hero.stats}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        // Function to render about section
+        function renderAbout() {
+            const about = websiteData.about;
+            return `
+                <section id="about" class="py-16 bg-white">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <div class="flex items-center justify-center space-x-2 text-orange-500 mb-4">
+                                ${icons.paw}
+                                <span class="text-sm font-medium uppercase tracking-wide">Layihə Haqqında</span>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">${about.title}</h2>
+                            <p class="text-xl text-gray-600 max-w-3xl mx-auto">${about.description}</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-6">${about.problems.title}</h3>
+                                <div class="space-y-4">
+                                    ${about.problems.items.map(item => `
+                                        <div class="flex items-start space-x-3">
+                                            ${icons.paw.replace('h-6 w-6', 'h-6 w-6 text-orange-500 mt-1 flex-shrink-0')}
+                                            <p class="text-gray-600">${item}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <img src="https://envs.sh/scE.jpg" alt="Könüllülər heyvanlarla işləyir" class="w-full h-auto rounded-xl shadow-lg">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div class="order-2 md:order-1">
+                                <img src="https://envs.sh/sjM.jpg" alt="Xoşbəxt ailə yeni ev heyvanı ilə" class="w-full h-auto rounded-xl shadow-lg">
+                            </div>
+                            <div class="order-1 md:order-2">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-6">${about.solutions.title}</h3>
+                                <div class="space-y-4">
+                                    ${about.solutions.items.map((item, index) => {
+                                        const iconColors = ['text-red-500', 'text-blue-500', 'text-green-500'];
+                                        const iconTypes = [icons.heart, icons.shield, icons.users];
+                                        return `
+                                            <div class="flex items-start space-x-3">
+                                                ${iconTypes[index].replace('h-6 w-6', `h-6 w-6 ${iconColors[index]} mt-1 flex-shrink-0`)}
+                                                <p class="text-gray-600">${item}</p>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        // Function to render goals section
+        function renderGoals() {
+            const goals = websiteData.goals;
+            return `
+                <section id="goals" class="py-16 bg-gradient-to-br from-orange-50 to-amber-50">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <div class="flex items-center justify-center space-x-2 text-orange-500 mb-4">
+                                ${icons.target}
+                                <span class="text-sm font-medium uppercase tracking-wide">Məqsədlərimiz</span>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">${goals.title}</h2>
+                            <p class="text-xl text-gray-600 max-w-3xl mx-auto">${goals.description}</p>
+                        </div>
+
+                        <!-- Visual Roadmap -->
+                        <div class="relative mb-16">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-200 hidden md:block"></div>
+                            
+                            ${goals.phases.map((phase, index) => {
+                                const isEven = index % 2 === 1;
+                                return `
+                                    <div class="relative z-10 mb-12">
+                                        <div class="flex flex-col md:flex-row items-center">
+                                            <div class="md:w-1/2 ${isEven ? 'flex justify-center md:justify-end order-1 md:order-1' : 'md:pr-12 md:text-right mb-6 md:mb-0'}">
+                                                ${isEven ? '' : `
+                                                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500 md:ml-auto md:mr-0 max-w-md">
+                                                        <h3 class="text-xl font-bold text-gray-800 mb-3">${phase.title}</h3>
+                                                        <p class="text-gray-600 mb-4">${phase.description}</p>
+                                                        <ul class="space-y-2">
+                                                            ${phase.items.map(item => `
+                                                                <li class="flex items-start">
+                                                                    ${icons.paw.replace('h-6 w-6', 'h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5')}
+                                                                    <span>${item}</span>
+                                                                </li>
+                                                            `).join('')}
+                                                        </ul>
+                                                        <div class="mt-4 text-sm font-medium text-orange-500">${phase.duration}</div>
+                                                    </div>
+                                                `}
+                                                ${isEven ? `
+                                                    <div class="bg-orange-500 rounded-full h-16 w-16 flex items-center justify-center shadow-lg z-10">
+                                                        <span class="text-white font-bold text-xl">${phase.number}</span>
+                                                    </div>
+                                                ` : ''}
+                                            </div>
+                                            <div class="md:w-1/2 ${isEven ? 'md:pl-12 md:text-left mb-6 md:mb-0 order-2 md:order-2' : 'flex justify-center md:justify-start'}">
+                                                ${isEven ? `
+                                                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500 max-w-md">
+                                                        <h3 class="text-xl font-bold text-gray-800 mb-3">${phase.title}</h3>
+                                                        <p class="text-gray-600 mb-4">${phase.description}</p>
+                                                        <ul class="space-y-2">
+                                                            ${phase.items.map(item => `
+                                                                <li class="flex items-start">
+                                                                    ${icons.paw.replace('h-6 w-6', 'h-5 w-5 text-orange-500 mr-2 flex-shrink-0 mt-0.5')}
+                                                                    <span>${item}</span>
+                                                                </li>
+                                                            `).join('')}
+                                                        </ul>
+                                                        <div class="mt-4 text-sm font-medium text-orange-500">${phase.duration}</div>
+                                                    </div>
+                                                ` : `
+                                                    <div class="bg-orange-500 rounded-full h-16 w-16 flex items-center justify-center shadow-lg z-10">
+                                                        <span class="text-white font-bold text-xl">${phase.number}</span>
+                                                    </div>
+                                                `}
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+
+                        <!-- Key Objectives -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Əsas Hədəflərimiz</h3>
+                            <div class="grid md:grid-cols-3 gap-8">
+                                ${goals.objectives.map((objective, index) => {
+                                    const iconTypes = [icons.paw, icons.heart, icons.users];
+                                    const iconColors = ['text-orange-500', 'text-red-500', 'text-green-500'];
+                                    return `
+                                        <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl shadow-md">
+                                            <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                                                ${iconTypes[index].replace('h-6 w-6', `h-8 w-8 ${iconColors[index]}`)}
+                                            </div>
+                                            <h4 class="text-lg font-semibold text-gray-800 mb-3 text-center">${objective.title}</h4>
+                                            <p class="text-gray-600 text-center">${objective.description}</p>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+
+                        <!-- International Models -->
+                        <div class="mt-12 bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Beynəlxalq Təcrübə</h3>
+                            <p class="text-gray-600 text-center mb-8">Layihəmiz aşağıdakı uğurlu beynəlxalq modellərdən ilhamlanır</p>
+                            
+                            <div class="grid md:grid-cols-3 gap-8">
+                                ${goals.internationalModels.map(model => `
+                                    <div class="border border-orange-100 rounded-xl p-6 hover:shadow-md transition-shadow">
+                                        <h4 class="text-lg font-semibold text-gray-800 mb-3">${model.name}</h4>
+                                        <p class="text-gray-600 text-sm">${model.description}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+   
+                    </div>
+                </section>
+            `;
+        }
+
+        // Function to render contact section
+        function renderContact() {
+            const contact = websiteData.contact;
+            return `
+                <section id="contact" class="py-16 bg-white">
+                    <div class="container mx-auto px-4">
+                        <div class="text-center mb-12">
+                            <div class="flex items-center justify-center space-x-2 text-orange-500 mb-4">
+                                ${icons.paw}
+                                <span class="text-sm font-medium uppercase tracking-wide">Əlaqə</span>
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">${contact.title}</h2>
+                            <p class="text-xl text-gray-600 max-w-3xl mx-auto">${contact.description}</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div class="space-y-6">
+                                    ${contact.info.map(info => {
+                                        const iconColors = {
+                                            email: 'bg-orange-100 text-orange-500',
+                                            phone: 'bg-green-100 text-green-500',
+                                            instagram: 'bg-pink-100 text-pink-500'
+                                        };
+                                        const linkColors = {
+                                            email: 'text-orange-500',
+                                            phone: 'text-green-500',
+                                            instagram: 'text-pink-500'
+                                        };
+                                        const iconMap = {
+                                            email: icons.mail,
+                                            phone: icons.phone,
+                                            instagram: icons.instagram
+                                        };
+                                        return `
+                                            <div class="flex items-center space-x-4">
+                                                <div class="${iconColors[info.type]} p-3 rounded-full">
+                                                    ${iconMap[info.type]}
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-semibold text-gray-800">${info.label}</h3>
+                                                    <a href="${info.href}" class="${linkColors[info.type]} hover:underline">${info.value}</a>
+                                                </div>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+
+                                <div class="mt-8 p-6 bg-orange-50 rounded-xl">
+                                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                        ${icons.heart.replace('h-6 w-6', 'h-5 w-5 text-red-500 mr-2')}
+                                        ${contact.emergency.title}
+                                    </h3>
+                                    <p class="text-gray-600 text-sm">${contact.emergency.description}</p>
+                                </div>
+                            </div>
+
+                      
+                        </div>
+
+                        
+                    </div>
+                </section>
+            `;
+        }
+
+        // Function to render the entire page
+        function renderPage() {
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = renderHero() + renderAbout() + renderGoals() + renderContact();
+        }
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            renderNavigation();
+            renderPage();
+        });
+    </script>
+</body>
+</html>
